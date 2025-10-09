@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Filmes | Marquise</title>
+     <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Editar Filme</h1>
+        <form id="formularioEdicao" class="formLogin">
+            <input type="hidden" id="movieIndex">
+            <ul class="groupForm">
+                <li>
+                    <label for="nomeFilme">Nome do filme:</label>
+                    <input type="text" id="nomeFilme" required>
+                </li>
+                <li>
+                    <label for="atores">Atores:</label>
+                    <input type="text" id="atores">
+                </li>
+                <li>
+                    <label for="diretor">Diretor:</label>
+                    <input type="text" id="diretor">
+                </li>
+                <li>
+                    <label for="ano">Ano:</label>
+                    <input type="number" id="ano">
+                </li>
+                <li>
+                    <label for="genero">Gênero:</label>
+                    <input type="text" id="genero">
+                </li>
+                <li>
+                    <label for="produtora">Produtora:</label>
+                    <input type="text" id="produtora">
+                </li>
+                <li>
+                    <label for="sinopse">Sinopse:</label>
+                    <textarea id="sinopse"></textarea>
+                </li>
+            </ul>
+            <div class="actionButtons">
+                <button type="submit" class="button">Salvar Edição</button>
+                <button type="button" class="buttonCancel" onclick="window.location.href='/listar_filmes.html'">Cancelar</button>
+            </div>
+        </form>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

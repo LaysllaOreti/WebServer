@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Filmes | Marquise</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Cadastro de Filme</h1>
+        <form id="formCadastro" class="formLogin">
+            <ul class="groupForm">
+                <li>
+                    <label for="nomeFilme">Nome do filme:</label>
+                    <input type="text" id="nomeFilme" name="nomeFilme" maxlength="80" placeholder="Insira o nome do filme" required>
+                </li>
+                <li>
+                    <label for="atores">Atores:</label>
+                    <input type="text" id="atores" name="atores" placeholder="Insira os atores principais" maxlength="100" required>
+                </li>
+                <li>
+                    <label for="diretor">Diretor:</label>
+                    <input type="text" id="diretor" name="diretor" maxlength="50" placeholder="Insira o nome do diretor" required>
+                </li>
+                <li>
+                    <label for="ano">Ano de lançamento:</label>
+                    <input type="text" id="ano" name="ano" maxlength="10" placeholder="Insira o ano de lançamento" required>
+                </li>
+                <li>
+                    <label for="genero">Gênero:</label>
+                    <input type="text" id="genero" name="genero" maxlength="50" placeholder="Insira o gênero do filme" required>
+                </li>
+                <li>
+                    <label for="produtora">Produtora:</label>
+                    <input type="text" id="produtora" name="produtora" placeholder="Insira a produtora do filme" maxlength="50">
+                </li>
+                <li>
+                    <label for="sinopse">Sinopse:</label>
+                    <input type="text" id="sinopse" name="sinopse" placeholder="Insira a sinopse do filme" maxlength="180">
+                </li>
+            </ul>
+            <button type="submit" class="button">Cadastrar</button>
+        </form>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
