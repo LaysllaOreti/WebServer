@@ -116,6 +116,7 @@ label {
 #titleList {
   color: #fdfdfd;
   text-align: center;
+  margin-top: 20px;
 }
 
 table {
@@ -128,8 +129,7 @@ table {
 
 th, td {
   border: 1px solid #921462;
-  padding: 10px;
-  text-align: center;
+  padding: 30px;
 }
 
 th {
@@ -137,11 +137,13 @@ th {
   font-weight: 500;
   color: #fdfdfd;
   padding: 4px;
+  text-align: center;
 }
 
 td {
   color: #000;
   font-weight: 500;
+  text-align: left;
 }
 
 /* área dos botões de editar */
@@ -166,24 +168,29 @@ td {
 }
 
 .buttonCancel:hover {
-  background-color: #999;
+  background-color: #710808;
 }
 
 .buttonVoltarCadastro {
-  margin-top: 20px;
   background-color: #ebc3dc;
-  padding: 8px;
+  color: #921462;
+  padding: 8px 20px;
   border: none;
   border-radius: 2px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 18px;
   font-weight: bold;
   transition: background 0.3s ease;
-  color: #921462;
-  margin-left: 20px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  width: 250px;
+  height: 60px;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .buttonVoltarCadastro:hover {
-  background-color: #921462;
-  color: #eceaea;
+  background-color: #ca9fba;
 }

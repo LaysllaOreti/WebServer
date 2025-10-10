@@ -3,7 +3,36 @@ from http.server import SimpleHTTPRequestHandler, HTTPServer
 from urllib.parse import parse_qs, urlparse
 import json
 
+import mysql.connector 
+
+mydb = mysql.connector.connect(
+    host = "localhost",
+    user = "root",
+    password = "root"
+)
+
 class MyHandler(SimpleHTTPRequestHandler):
+
+    #classe de carregamento
+    def loadFilmes(self):
+
+        # conect o python com o banco
+        cursor = mydb.cursor()
+
+        # primeiro o nome do banco, depois o da tabela
+        cursor.execute("SELECT * FROM locadora_marquise.diretor")
+
+        result = cursor.fetchall()
+
+        print("******************/n", result)
+
+        for res in result:
+            id_diretor = res[0]
+            nome = res[1]
+            sobrenome = res[2]
+            genero = res[3]
+
+            print(id_diretor,nome,sobrenome,genero)
 
     # Verifica se o usuário existe e faz o login
     def accont_user(self, login, password):
@@ -26,6 +55,7 @@ class MyHandler(SimpleHTTPRequestHandler):
     # Trata requisições GET (rotas de páginas e API)
     def do_GET(self):
         parsed_path = urlparse(self.path)
+        self.loadFilmes()
         path = parsed_path.path
         
         # API: retorna todos os filmes
