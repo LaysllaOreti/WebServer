@@ -31,7 +31,7 @@ async function displayMovieCatalog() {
 
     movies.forEach((movie, i) => {
       tableHtml += `<tr>
-        <td>${sanitizeInput(movie.nomeFilme)}</td>
+        <td>${sanitizeInput(movie.titulo)}</td>
         <td>${sanitizeInput(movie.atores||'')}</td>
         <td>${sanitizeInput(movie.diretor||'')}</td>
         <td>${sanitizeInput(movie.ano||'')}</td>
