@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filme Cadastrado com Sucesso</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Filme cadastrado com sucesso!</h1>
+    <section id="infoFilme"></section>
+    <a href="/cadastro_filmes" class="button">Cadastrar outro</a>
+  </main>
+
+  <script>
+    // Exibe as informações do filme com base no parâmetro ?titulo=
+    const params = new URLSearchParams(window.location.search);
+    const titulo = params.get('titulo');
+
+    fetch('/api/filmes')
+      .then(res => res.json())
+      .then(filmes => {
+        const filme = filmes.find(f => f.titulo === titulo);
+        if (filme) {
+          document.getElementById('infoFilme').innerHTML = `
+            <img src="${filme.poster || 'https://via.placeholder.com/200'}" alt="Pôster do filme" width="200"><br>
+            <h2>${filme.titulo}</h2>
+            <p><strong>Ano:</strong> ${filme.ano}</p>
+            <p><strong>Diretor:</strong> ${filme.diretor}</p>
+            <p><strong>Duração:</strong> ${filme.duracao} min</p>
+            <p><strong>Orçamento:</strong> US$ ${parseFloat(filme.orcamento).toLocaleString()}</p>
+            <p><strong>Gênero:</strong> ${filme.genero}</p>
+            <p><strong>Produtora:</strong> ${filme.produtora}</p>
+            <p><strong>Sinopse:</strong> ${filme.sinopse}</p>
+          `;
+        }
+      });
+  </script>
+</body>
+</html>

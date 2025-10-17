@@ -1,48 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Filmes | Marquise</title>
-    <link rel="stylesheet" href="styles/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar Filmes | Marquise</title>
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <main class="container">
-        <h1>Cadastro de Filme</h1>
-        <form id="formCadastro" class="formLogin">
-            <ul class="groupForm">
-                <li>
-                    <label for="nomeFilme">Nome do filme:</label>
-                    <input type="text" id="nomeFilme" name="nomeFilme" maxlength="80" placeholder="Insira o nome do filme" required>
-                </li>
-                <li>
-                    <label for="atores">Atores:</label>
-                    <input type="text" id="atores" name="atores" placeholder="Insira os atores principais" maxlength="100" required>
-                </li>
-                <li>
-                    <label for="diretor">Diretor:</label>
-                    <input type="text" id="diretor" name="diretor" maxlength="50" placeholder="Insira o nome do diretor" required>
-                </li>
-                <li>
-                    <label for="ano">Ano de lançamento:</label>
-                    <input type="text" id="ano" name="ano" maxlength="10" placeholder="Insira o ano de lançamento" required>
-                </li>
-                <li>
-                    <label for="genero">Gênero:</label>
-                    <input type="text" id="genero" name="genero" maxlength="50" placeholder="Insira o gênero do filme" required>
-                </li>
-                <li>
-                    <label for="produtora">Produtora:</label>
-                    <input type="text" id="produtora" name="produtora" placeholder="Insira a produtora do filme" maxlength="50">
-                </li>
-                <li>
-                    <label for="sinopse">Sinopse:</label>
-                    <input type="text" id="sinopse" name="sinopse" placeholder="Insira a sinopse do filme" maxlength="180">
-                </li>
-            </ul>
-            <button type="submit" class="button">Cadastrar</button>
-        </form>
-    </main>
-    <script src="script.js"></script>
+  <main class="container">
+    <h1>Cadastro de Filme</h1>
+    <form id="formCadastro" class="formLogin" method="POST" action="/cadastro_filme">
+      <ul class="groupForm">
+        <li>
+          <label for="titulo">Nome do filme:</label>
+          <input type="text" id="titulo" name="titulo" maxlength="80" placeholder="Insira o nome do filme" required>
+        </li>
+        <li>
+          <label for="atores">Atores:</label>
+          <input type="text" id="atores" name="atores" placeholder="Insira os atores principais" maxlength="100" required>
+        </li>
+        <li>
+          <label for="diretor">Diretor:</label>
+          <input type="text" id="diretor" name="diretor" maxlength="50" placeholder="Insira o nome do diretor" required>
+        </li>
+        <li>
+          <label for="ano">Ano de lançamento:</label>
+          <input type="number" id="ano" name="ano" placeholder="Ex: 2024" min="1888" max="2100" required>
+        </li>
+        <li>
+          <label for="genero">Gênero:</label>
+          <input type="text" id="genero" name="genero" maxlength="50" placeholder="Insira o gênero do filme" required>
+        </li>
+        <li>
+          <label for="produtora">Produtora:</label>
+          <input type="text" id="produtora" name="produtora" placeholder="Insira a produtora do filme" maxlength="50">
+        </li>
+        <li>
+          <label for="duracao">Duração (minutos):</label>
+          <input type="number" id="duracao" name="duracao" min="1" placeholder="Ex: 120" required>
+        </li>
+        <li>
+          <label for="orcamento">Orçamento (US$):</label>
+          <input type="number" step="0.01" id="orcamento" name="orcamento" placeholder="Ex: 250000000.00" required>
+        </li>
+        <li>
+          <label for="poster">Link do pôster:</label>
+          <input type="url" id="poster" name="poster" placeholder="https://exemplo.com/poster.jpg">
+        </li>
+        <li>
+          <label for="sinopse">Sinopse:</label>
+          <textarea id="sinopse" name="sinopse" placeholder="Insira a sinopse do filme" maxlength="500"></textarea>
+        </li>
+      </ul>
+      <button type="submit" class="button">Cadastrar</button>
+    </form>
+  </main>
 </body>
 </html>

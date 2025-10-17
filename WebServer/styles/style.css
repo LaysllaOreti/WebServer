@@ -15,9 +15,9 @@ body {
   background: linear-gradient(to top, #c22573, #e991c1);
 }
 
-.titleHome {
+#titleHome {
   text-align: center;
-  color: #d2d1d1;
+  color: #ffffff;
 }
 
 .forms {
@@ -45,6 +45,12 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.formLogin ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .groupForm {
